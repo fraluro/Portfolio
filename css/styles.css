@@ -1,0 +1,372 @@
+/* Estilos generales */
+
+.container {
+    width: 100%;
+    min-height: 10vh;
+    /* background-color: #f3f5f7; */
+}
+  
+nav {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 80px;
+    line-height: 80px;
+    z-index: 20;
+    background-color: white;
+    align-items: center;
+}
+  
+.logo {
+    display: flex;
+    font-size: 40px;
+    font-weight: 800;
+    color: #3d535f;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #3F6ACD;
+}
+  
+.navItems {
+    display: flex;
+}
+  
+.navItems li  {
+    list-style: none;
+    margin: 0 15px;
+}
+  
+.navItems li a {
+    font-size: 25px;
+    color: #3d535f;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+  
+.navItems li:hover a,
+.links a:hover {
+    color: #3F6ACD;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.links a {
+    font-size: 30px;
+    color: #0171ad;
+    margin: 25px 10px;
+}
+
+.mobile-nav {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #3d535f;
+    border-radius: 2px;
+}
+
+/* ... (tu código CSS actual) ... */
+
+@media (max-width: 1200px) {
+    .navItems {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        z-index: 15;
+    }
+
+    .navItems.active {
+        display: flex;
+    }
+
+    .navItems li {
+        margin: 10px 0;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .box{
+        display: none;
+    }
+
+    .box span{
+        display: none;
+    }
+
+    .box span img{
+        display: none;
+    }
+}
+
+/* Estilos de secciones */
+.sectionsContainer {
+    margin: 0 5%;
+}
+section {
+    padding: 50px 0;
+}
+
+.sectionHeader{
+    display: block;
+    position: relative;
+    font-size: 35px;
+    letter-spacing: 5px;
+    color: #3d535f;
+}
+
+.sectionHeader::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 45px;
+    bottom: 10px;
+    background-color: #3F6ACD;
+}
+.aboutHeader {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    position: relative;
+    width: 80%;
+    height: 80%;
+}
+  
+.img img {
+    position: relative;
+    height: 100%;
+    left: 5%;
+    animation: animateUser 3s linear infinite;
+    border-radius: 50px;
+}
+  
+@keyframes animateUser {
+    50%{
+      left: 10px;
+    }
+}
+  
+.img #splash {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    width: 160%;
+    filter: saturate(200%);
+    animation: animate 4s linear infinite;
+}
+  
+@keyframes animate {
+    50%{
+      left: 40%;
+      top: 45%;
+      width: 155%;
+    }
+}
+
+.sobre-mi{
+    margin-left: 2%;
+    font-size: 30px;
+}
+
+/* Estilos de trabajos */
+.trabajo {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.jobsHeader{
+    display: flex;
+    align-items: center;
+}
+
+.jobHeaderImg{
+    width: 10%;
+    margin: 0 0 1% 0;
+}
+
+.jobHeaderSpace{
+    margin-left: 2%;
+}
+
+.navItemsJobs {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+  
+.navItemsJobs li  {
+    list-style: none;
+    margin: 0 15px;
+    border: 1px solid black;
+    border-radius: 20px;   
+    padding: 2px 10px;
+    background-color: #82cdf5;
+    margin-top: 1%;
+}
+
+/* Estilos de sección de educación */
+.education {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.educationItem {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.educationItem h3 {
+    font-size: 24px;
+    color: #3d535f;
+}
+
+.educationDate {
+    color: #888;
+    margin-top: 5px;
+}
+
+.educationInfo {
+    margin-top: 10px;
+}
+
+/* Estilos de sección de cursos */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.courseItem {
+    background-color: #8eacf2;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+.courseItem:hover {
+    transform: translateY(-5px) scale(1.55);
+}
+
+.courseItem h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.courseDate {
+    font-size: 14px;
+}
+
+.courseInfo {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Estilos de sección de tecnologias */
+.box {
+    margin-left: 50%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    /*animation: animate 20s linear infinite;*/
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent, #0004);
+}
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#jenkins {
+    width: 160%;
+    height: 100%;
+}
+
+table {
+    margin: auto;
+    width: 50%;
+}
+
+th {
+    font-size: 50px;
+}
+
+td {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Estilos de footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.git {
+    color: white;
+}
